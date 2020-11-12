@@ -57,8 +57,8 @@ impl MainGame
         .expect("Failed to create device")
     }
     fn make_render_pipeline(device: &wgpu::Device, pipeline_layout: &wgpu::PipelineLayout) -> ((wgpu::ShaderModule,wgpu::ShaderModule),wgpu::RenderPipeline) {
-        let vs_module=device.create_shader_module(wgpu::include_spirv!("shader.vert.spv"));
-        let fs_module=device.create_shader_module(wgpu::include_spirv!("shader.frag.spv"));
+        let vs_module=device.create_shader_module(wgpu::include_spirv!("../shaders/shader.vert.spv"));
+        let fs_module=device.create_shader_module(wgpu::include_spirv!("../shaders/shader.frag.spv"));
         let rp = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
             label: None,
             layout: Some(pipeline_layout),
